@@ -80,7 +80,7 @@ When you are ready to start coding (have you gotten your design approved by an i
 * There should be one driver and two navigators at any time.
 * The driver should share their screen.
 * Communication is key! Navigators should explain what to type **as well as explain why.** Drivers should always explain what they are typing to the rest of hte group.
-* Rotation the role of driver every 15 - 20 minutes. Use git to push up changes so the next driver can pull those changes down. 
+* Rotate the role of driver every 15 - 20 minutes. Use git to push up changes so the next driver can pull those changes down. 
 
 ##### Tips
 
