@@ -51,14 +51,14 @@ class Trip {
       this.charges = []
       this.destination = destination
   }
-  checkValidity(Tesla) {
-      if (this.distance > Tesla.MaxRange) {
+  checkValidity(car) {
+      if (this.distance > car.maxRange) {
           return `Tesla range is lower than the distance increase range or editTrip.`
       }
       return `Seat belts on Distance is within Range.`
   }
-  calculateEstTime(Tesla) {
-     return this.distance % Tesla.TopSpeed
+  calculateEstTime() {
+     return `${Math.round(this.distance / 45)} mins` 
   }
   editTrip(newTime) {
       this.distance = newTime
@@ -85,7 +85,6 @@ class Trip {
   }
   }
 }
-
 // Write your data (instances and method calls) below this line
 console.log("Welcome to <<Tesla>>!")
 let modelSPayload = {
