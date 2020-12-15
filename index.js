@@ -44,20 +44,40 @@ class Person {
 class Trip {
   constructor(Distance,Destination) {
       this.Distance = Distance
-      this.Chargers = []
+      this.Charges = []
       this.Destination = Destination
   }
   checkValidity(Tesla) {
-      
+      if (this.Distance > Tesla.MaxRange) {
+          return `Tesla range is lower than the distance increase range or editTrip.`
+      }
+      return `Seat belts on Distance is within Range.`
   }
-  calculateEstTime() {
-      
+  calculateEstTime(Tesla) {
+     return this.Distance % Tesla.TopSpeed
   }
-  editTrip() {
-      
+  editTrip(newTime) {
+      this.Distance = newTime
+      return `Distance saved checkValidity.`
   }
   Arrive() {
-      
+      return `${this.Destination} Reached checkValidity for round trip. Updating chargeLocations`
+  }
+  Charge(Hrs) {
+      if (Hrs < 10) {
+          this.charges.push({
+              Power: '50KW'
+              Duration: Hrs
+              Time: new Date ()
+          })
+          return `Tesla charged for ${Hrs}Hrs insufficient for full charge`
+      }
+      this.charges.push({
+              Power: '50KW'
+              Duration: Hrs
+              Time: new Date ()
+          }
+         return `Tesla charged for ${Hrs}Hrs. Fully Charged`
   }
 }
 
