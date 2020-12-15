@@ -64,32 +64,37 @@ class Person {
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
       this.trips = []
+      this.teslas = []
   }
-  Buytesla() {
+  buyTesla() {
       this.bankBalance -= 60000
+      this.teslas.push(new ModelS(this,'blue'))
+      return `Congrats on your new tesla purchase.`
   }
-  Work() {
+  work() {
       this.bankBalance += 10000
   }
   planTrip(dist, dest) {
-    return new Trip(dist, dest)
+  this.trips.push(new Trip(dist, dest,this.teslas[0]))
+  return `Trip added`
   }
 }
 
 class Trip {
-  constructor(distance, destination) {
+  constructor(distance, destination,car) {
       this.distance = distance
       this.charges = []
       this.destination = destination
-
-  checkValidity(car) {
-      if (this.distance > car.maxRange) {
+      this.car = car
+}
+  checkValidity() {
+      if (this.distance > this.car.rangeRemaining) {
           return `Tesla range is lower than the distance increase range or editTrip.`
       }
       return `Seat belts on! ${this.destination} is within range.`
   }
   calculateEstTime() {
-     return `${Math.round(this.distance / 45)} mins` 
+     return `${(this.distance / 45).toFixed(2)} Hrs` 
   }
   editTrip(newTime) {
       this.distance = newTime
@@ -98,22 +103,14 @@ class Trip {
   end () {
       return `${this.destination} Reached, checkValidity for round trip. Updating chargeLocations`
   }
-  charge(mins, superCharge) {
-    if (superCharge) {
+  charge(mins) {
       this.charges.push({
         Power: '440V',
         Duration: mins,
         Time: new Date ()
       })
-    } else {
-      this.charges.push({
-        Power: '220V',
-        Duration: mins,
-        Time: new Date ()
-      })
-    }
-    return `Tesla charged for ${mins} mins`
-  }
+    return  this.car.charge(mins,true)
+  }  
 }
 // Write your data (instances and method calls) below this line
 console.log("Welcome to <<Tesla>>!")
@@ -140,3 +137,5 @@ let modelSPayload = {
 }
 
 let testCar = new ModelS('SGS', 'Blue')
+let testcar = new Trip(200,'lower Manhathan',testCar)
+let testperson = new Person('testperson','tesrperson@me.com',100000,true)
