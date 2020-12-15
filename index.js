@@ -58,15 +58,11 @@ class ModelS extends Tesla {
 }
 
 class Person {
-  constructor(firstName, lastName, email, bankBalance, driversLicense) {
-      this.firstName = firstName;
-      this.lastName = lastName;
+  constructor(fullName, email, bankBalance, driversLicense) {
+      this.fullName = fullName;
       this.email = email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
-  }
-  fullName() {
-    
   }
   Buytesla() {
       this.bankBalance -= 60000
