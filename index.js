@@ -67,9 +67,13 @@ class Person {
       this.teslas = []
   }
   buyTesla() {
-      this.bankBalance -= 60000
+    if (this.driversLicense) {
+       this.bankBalance -= 60000
       this.teslas.push(new ModelS(this,'blue'))
       return `Congrats on your new tesla purchase.`
+    } else {
+      return `SORRY you'll need a driver license to finish your deal`
+    }
   }
   work() {
       this.bankBalance += 10000
