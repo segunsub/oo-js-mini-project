@@ -5,7 +5,7 @@ class Tesla {
 
 class Person {
   constructor(fullName, Email, bankBalance, driversLicense) {
-      this.fullName = fullName;
+      this.fullName = fullName; 
       this.Email = Email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
