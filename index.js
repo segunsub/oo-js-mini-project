@@ -28,9 +28,9 @@ class ModelS extends Tesla {
 }
 
 class Person {
-  constructor(fullName, Email, bankBalance, driversLicense) {
-      this.fullName = fullName;
-      this.Email = Email;
+  constructor(fullName, email, bankBalance, driversLicense) {
+      this.fullName = fullName; 
+      this.email = email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
   }
@@ -40,51 +40,49 @@ class Person {
   Work () {
       
   }
-  takeATrip() {
-      
-  }
   planTrip() {
       
   }
 }
 
 class Trip {
-  constructor(Distance,Destination) {
-      this.Distance = Distance
-      this.Charges = []
-      this.Destination = Destination
+  constructor(distance,destination) {
+      this.distance = distance
+      this.charges = []
+      this.destination = destination
   }
   checkValidity(Tesla) {
-      if (this.Distance > Tesla.MaxRange) {
+      if (this.distance > Tesla.MaxRange) {
           return `Tesla range is lower than the distance increase range or editTrip.`
       }
       return `Seat belts on Distance is within Range.`
   }
   calculateEstTime(Tesla) {
-     return this.Distance % Tesla.TopSpeed
+     return this.distance % Tesla.TopSpeed
   }
   editTrip(newTime) {
-      this.Distance = newTime
+      this.distance = newTime
       return `Distance saved checkValidity.`
   }
-  Arrive() {
-      return `${this.Destination} Reached checkValidity for round trip. Updating chargeLocations`
+  end() {
+      return `${this.destination} Reached, checkValidity for round trip. Updating chargeLocations`
   }
-  Charge(Hrs) {
+  charge(Hrs) {
       if (Hrs < 10) {
           this.charges.push({
-              Power: '50KW'
-              Duration: Hrs
+              Power: '50KW',
+              Duration: Hrs,
               Time: new Date ()
           })
           return `Tesla charged for ${Hrs}Hrs insufficient for full charge`
-      }
+      }else {
       this.charges.push({
-              Power: '50KW'
-              Duration: Hrs
+              Power: '50KW',
+              Duration: Hrs,
               Time: new Date ()
-          }
-         return `Tesla charged for ${Hrs}Hrs. Fully Charged`
+          })
+          return `Tesla charged for ${Hrs}Hrs. Fully Charged`
+  }
   }
 }
 
