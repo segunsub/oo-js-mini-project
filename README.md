@@ -16,9 +16,9 @@ This project will be completed in groups of 3. Every **row** is a group.
 | Team Member #1 | Team Member #2 | Team Member #3 |
 |---|---|---|
 | Segun | Gracie | Shemar |
-| Asif | Jarrit | Jason |
+| Itzel | Jarrit | Jason |
 | Andrea | Ricardo | Olivia |
-| Rabia | Itzel | Cat |
+| Rabia | Asif | Cat |
 
 ## Process
 
