@@ -1,6 +1,26 @@
 // Write your classes below this line
 class Tesla {
-  
+  constructor (maxRange, acceleration, storageSpace, seats, topSpeed, trimLevels, weight, availableOptions) {
+    this.maxRange = maxRange
+    this.acceleration = acceleration
+    this.storageSpace = storageSpace 
+    this.seats = seats
+    this.topSpeed = topSpeed
+    this.trimLevels = trimLevels
+    this.weight = weight
+    this.availableOptions = availableOptions
+  }
+  applyTrim (trim) {
+    
+  }
+}
+
+
+class ModelS extends Tesla {
+  constructor () {
+    super(387, 2.3, 28, 5, 163, ['Performance', 'Long Range Plus'], 4929, [])
+    this.rangeRemaining = this.maxRange  
+  }
 }
 
 class Person {
