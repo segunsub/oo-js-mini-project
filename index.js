@@ -35,7 +35,9 @@ class Person {
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
   }
-  
+  fullName() {
+    
+  }
   Buytesla() {
       this.bankBalance -= 60000
   }
