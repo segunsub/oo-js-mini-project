@@ -26,7 +26,7 @@ You will be building out an Object Oriented domain of your choice. As a group, y
 
 ### Brainstorm
 
-You only have one day to work on this project. A good sized project will have 3 to 6 classes with every classes having multiple data properties and some methods. In addition, many of the classes may have interact with each other. We recommend choosing one of the following domains.
+You only have one day to work on this project. A good sized project will have 3 to 6 classes with every class having multiple data properties and some methods. In addition, many of the classes may interact with each other. We recommend choosing one of the following domains.
 
 ##### Social Media
 * `Instagram`
