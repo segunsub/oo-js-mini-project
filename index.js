@@ -58,15 +58,13 @@ class ModelS extends Tesla {
 }
 
 class Person {
-  constructor(firstName, lastName, email, bankBalance, driversLicense) {
-      this.firstName = firstName;
-      this.lastName = lastName;
+  constructor(fullName, email, bankBalance, driversLicense) {
+      this.fullName = fullName;
       this.email = email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
       this.trips = []
   }
-  
   Buytesla() {
       this.bankBalance -= 60000
   }
@@ -83,15 +81,15 @@ class Trip {
       this.distance = distance
       this.charges = []
       this.destination = destination
-  }
-  checkValidity(Tesla) {
-      if (this.distance > Tesla.MaxRange) {
-          return `Tesla range is lower than the distance. Increase range or edit this trip.`
+
+  checkValidity(car) {
+      if (this.distance > car.maxRange) {
+          return `Tesla range is lower than the distance increase range or editTrip.`
       }
       return `Seat belts on! ${this.destination} is within range.`
   }
-  calculateEstTime(Tesla) {
-     return this.distance % Tesla.TopSpeed
+  calculateEstTime() {
+     return `${Math.round(this.distance / 45)} mins` 
   }
   editTrip(newTime) {
       this.distance = newTime
@@ -117,7 +115,6 @@ class Trip {
     return `Tesla charged for ${mins} mins`
   }
 }
-
 // Write your data (instances and method calls) below this line
 console.log("Welcome to <<Tesla>>!")
 let modelSPayload = {
