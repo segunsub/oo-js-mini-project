@@ -55,7 +55,7 @@ It is perfectly fine if more than one group chooses the same domain. There are m
 
 ### Design
 
-Before you touch the `index.js` file, you **MUST** have a solid game plan. Create class diagrams for each of the classes you plan to build. Determine, what is the [Minimum Viable Product](https://www.interaction-design.org/literature/article/minimum-viable-product-mvp-and-design-balancing-risk-to-gain-reward) (MVP) for this project? All of the domains above *could* be built out using only 2 or 3 key classes. A common pitfall is to bite off more than one can chew, so before you write 5+ classes, determine which classes and methods are most important and are part of your MVP. All other classes and methods will be stretch goals (features that get built *only* if time permits).
+Before you touch the `index.js` file, you **MUST** have a solid game plan. Create class diagrams for each of the classes you plan to build. Determine: What is the [Minimum Viable Product](https://www.interaction-design.org/literature/article/minimum-viable-product-mvp-and-design-balancing-risk-to-gain-reward) (MVP) for this project? All of the domains above *could* be built out using only 2 or 3 key classes. A common pitfall is to bite off more than one can chew. Before you write 5+ classes, determine which classes and methods are most important and are part of your MVP. All other classes and methods will be stretch goals (features that get built *only* if time permits).
 
 No matter what domain you are buiding out from the list above, **an instructor must approve your class diagrams before you start coding**.
 
