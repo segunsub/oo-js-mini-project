@@ -37,10 +37,10 @@ class Person {
   }
   
   Buytesla() {
-      
+      this.bankBalance -= 60000
   }
   Work() {
-      
+      this.bankBalance += 10000
   }
   planTrip() {
    
