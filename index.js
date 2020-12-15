@@ -1,14 +1,16 @@
 // Write your classes below this line
 class Tesla {
-  constructor (maxRange, acceleration, storageSpace, seats, topSpeed, trimLevels, weight, availableOptions) {
-    this.maxRange = maxRange
-    this.acceleration = acceleration
-    this.storageSpace = storageSpace 
-    this.seats = seats
-    this.topSpeed = topSpeed
-    this.trimLevels = trimLevels
-    this.weight = weight
-    this.availableOptions = availableOptions
+  constructor (model) {
+    this.maxRange = model.maxRange
+    this.acceleration = model.acceleration
+    this.storageSpace = model.storageSpace 
+    this.seats = model.seats
+    this.topSpeed = model.topSpeed
+    this.trimLevels = model.trimLevels
+    this.weight = model.weight
+    this.availableOptions = model.availableOptions
+    this.rangeRemaining = this.maxRange
+    this.odometer = 0
   }
   applyTrim (trim) {
     
@@ -17,9 +19,11 @@ class Tesla {
 
 
 class ModelS extends Tesla {
-  constructor () {
-    super(387, 2.3, 28, 5, 163, ['Performance', 'Long Range Plus'], 4929, [])
-    this.rangeRemaining = this.maxRange  
+  constructor (owner, color, options = []) {
+    super(modelSPayload)
+    this.owner = owner
+    this.installedOptions = options
+    this.color = color
   }
 }
 
@@ -86,3 +90,26 @@ class Trip {
 
 // Write your data (instances and method calls) below this line
 console.log("Welcome to <<Tesla>>!")
+let modelSPayload = {
+  maxRange: 387,
+  acceleration: 2.3,
+  storageSpace: 28,
+  seats: 5,
+  topSpeed: 163,
+  weight: 4929,
+  availableOptions: [],
+  trimLevels: {
+    "Performance": {
+      acceleration: 2.3,
+      maxRange: 387,
+      weight: 4929
+    },
+    "Long Range Plus": {
+      acceleration: 3.7,
+      maxRange: 402,
+      weight: 4815
+    }
+  }
+}
+
+let testCar = new ModelS('SGS', 'Blue')
