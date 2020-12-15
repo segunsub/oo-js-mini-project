@@ -33,7 +33,7 @@ class Person {
   Buytesla() {
       
   }
-  Work () {
+  Work() {
       
   }
   planTrip() {
