@@ -24,9 +24,9 @@ class ModelS extends Tesla {
 }
 
 class Person {
-  constructor(fullName, Email, bankBalance, driversLicense) {
-      this.fullName = fullName;
-      this.Email = Email;
+  constructor(fullName, email, bankBalance, driversLicense) {
+      this.fullName = fullName; 
+      this.email = email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
   }
@@ -34,9 +34,6 @@ class Person {
       
   }
   Work () {
-      
-  }
-  takeATrip() {
       
   }
   planTrip() {
