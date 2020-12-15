@@ -64,6 +64,7 @@ class Person {
       this.email = email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
+      this.trips = []
   }
   
   Buytesla() {
@@ -72,22 +73,22 @@ class Person {
   Work() {
       this.bankBalance += 10000
   }
-  planTrip() {
-   
+  planTrip(dist, dest) {
+    return new Trip(dist, dest)
   }
 }
 
 class Trip {
-  constructor(distance,destination) {
+  constructor(distance, destination) {
       this.distance = distance
       this.charges = []
       this.destination = destination
   }
   checkValidity(Tesla) {
       if (this.distance > Tesla.MaxRange) {
-          return `Tesla range is lower than the distance increase range or editTrip.`
+          return `Tesla range is lower than the distance. Increase range or edit this trip.`
       }
-      return `Seat belts on Distance is within Range.`
+      return `Seat belts on! ${this.destination} is within range.`
   }
   calculateEstTime(Tesla) {
      return this.distance % Tesla.TopSpeed
@@ -96,25 +97,24 @@ class Trip {
       this.distance = newTime
       return `Distance saved checkValidity.`
   }
-  end() {
+  end () {
       return `${this.destination} Reached, checkValidity for round trip. Updating chargeLocations`
   }
-  charge(Hrs) {
-      if (Hrs < 10) {
-          this.charges.push({
-              Power: '50KW',
-              Duration: Hrs,
-              Time: new Date ()
-          })
-          return `Tesla charged for ${Hrs}Hrs insufficient for full charge`
-      }else {
+  charge(mins, superCharge) {
+    if (superCharge) {
       this.charges.push({
-              Power: '50KW',
-              Duration: Hrs,
-              Time: new Date ()
-          })
-          return `Tesla charged for ${Hrs}Hrs. Fully Charged`
-  }
+        Power: '440V',
+        Duration: mins,
+        Time: new Date ()
+      })
+    } else {
+      this.charges.push({
+        Power: '220V',
+        Duration: mins,
+        Time: new Date ()
+      })
+    }
+    return `Tesla charged for ${mins} mins`
   }
 }
 
