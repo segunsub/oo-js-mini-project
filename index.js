@@ -35,10 +35,10 @@ class Person {
       this.driversLicense = driversLicense;
   }
   Buytesla() {
-      
+      this.bankBalance -= 60000
   }
   Work() {
-      
+      this.bankBalance += 10000
   }
   planTrip() {
       
