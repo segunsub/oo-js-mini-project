@@ -66,7 +66,12 @@ class Person {
       this.trips = []
   }
   Buytesla() {
+    if (driversLicense) {
       this.bankBalance -= 60000
+      // return `You are the new owner of this car`
+    } else {
+      return `SORRY you'll need a driver license to finish your deal`
+    }
   }
   Work() {
       this.bankBalance += 10000
