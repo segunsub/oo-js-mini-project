@@ -63,7 +63,7 @@ No matter what domain you are buiding out from the list above, **an instructor m
 1. Your MVP should consist of 2 or 3 classes with 2 to 4 methods each. If a class has more than 4 methods, figure out which ones are important enough to be part of MVP and which are stretch goals. 
 2. Double check to see if any properties are better off as methods. Instead of a `numOfFriends` property, it may make more sense to have a `getNumOfFriends()` method that *derives* the data from an existing data property. 
 3. Think about how your classes will interate with each other. 
-    * If two objects have an `IS-A` relationship with each other, try using inheritance.
+    * If an object `IS-A` some other object, try using inheritance.
     * If an object `HAS-A` some other object, we should add a data property that is an *instance*.
     * If an object `BELONGS-TO` some other object, we should add a data property that is an *instance*.
     * If an object `HAS-MANY` other objects, we should add a data property that is an *array of instances*.
@@ -88,6 +88,7 @@ When you are ready to start coding (have you gotten your design approved by an i
 * For your first 2 or 3 classes, start implementing the easy stuff first (constructor methods and data properties).
 * **Code a Little, Test a Little!** Create a lot of instances at the bottom of the file to test out your classes.
 * For complex methods, practice the PEDAC approach
+* Some methods might involve the *instantiation* of another instance. For example, `user.postTweet()` would be a `User` method that creates a `Tweet` instance. 
 * For methods with multiple control flows (loops and if statments), test every if branch, loop, and use case.
 
 ### Presentations
