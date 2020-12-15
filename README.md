@@ -60,7 +60,7 @@ Before you touch the `index.js` file, you **MUST** have a solid game plan. Creat
 No matter what domain you are buiding out from the list above, **an instructor must approve your class diagrams before you start coding**.
 
 ##### Tips
-1. Your MVP should consist of 2 or 3 classes with 2 to 4 methods each. If a class has more than 4 methods, figure out which ones important enough to be part of MVP and which are stretch goals. 
+1. Your MVP should consist of 2 or 3 classes with 2 to 4 methods each. If a class has more than 4 methods, figure out which ones are important enough to be part of MVP and which are stretch goals. 
 2. Double check to see if any properties are better off as methods. Instead of a `numOfFriends` property, it may make more sense to have a `getNumOfFriends()` method that *derives* the data from an existing data property. 
 3. Think about how your classes will interate with each other. 
     * If two objects have an `IS-A` relationship with each other, try using inheritance.
