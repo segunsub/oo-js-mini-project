@@ -15,6 +15,36 @@ class Tesla {
   applyTrim (trim) {
     
   }
+  drive (distance) {
+    if (distance > this.rangeRemaining) {
+      return 'You do not have enough charge to make it that far!'
+    }
+    this.odometer += distance
+    this.rangeRemaining -= distance
+    return `You have successfully driven ${distance} miles, you have ${this.rangeRemaining} miles left.`
+  }
+  charge (time, superCharge) {
+    if (superCharge) {
+      let rangeAdded = Math.floor(time / 30)*200 + (time % 30)*(200/30)
+      let chargeBill = (time*0.03).toFixed(2)
+      if (this.rangeRemaining + rangeAdded > this.maxRange) {
+        this.rangeRemaining = this.maxRange
+        return `Your Tesla is fully charged! Your account will be charged $${chargeBill}.`
+      } else {
+        this.rangeRemaining += rangeAdded
+        return `Your Tesla has been charged, it now has a range of ${this.rangeRemaining} miles. Your account will be charged $${chargeBill}.`
+      }
+    } else {
+      let rangeAdded = Math.floor(time / 30)*50 + (time % 30)*(50/30)
+      if (this.rangeRemaining + rangeAdded > this.maxRange) {
+        this.rangeRemaining = this.maxRange
+        return `Your Tesla is fully charged!`
+      } else {
+        this.rangeRemaining += rangeAdded
+        return `Your Tesla has been charged, it now has a range of ${this.rangeRemaining} miles.`
+      }
+    }
+  }
 }
 
 
@@ -28,11 +58,15 @@ class ModelS extends Tesla {
 }
 
 class Person {
-  constructor(fullName, email, bankBalance, driversLicense) {
-      this.fullName = fullName; 
+  constructor(firstName, lastName, email, bankBalance, driversLicense) {
+      this.firstName = firstName;
+      this.lastName = lastName;
       this.email = email;
       this.bankBalance = bankBalance;
       this.driversLicense = driversLicense;
+  }
+  fullName() {
+    
   }
   Buytesla() {
       this.bankBalance -= 60000
@@ -41,7 +75,7 @@ class Person {
       this.bankBalance += 10000
   }
   planTrip() {
-      
+   
   }
 }
 
