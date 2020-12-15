@@ -1,5 +1,7 @@
 # Object Oriented Mini Project
 
+Instructions for a day-long group project. 
+
 ## Purpose
 
 The purpose of this project is to...
@@ -18,8 +20,9 @@ This project will be completed in groups of 3. Every **row** is a group.
 | Andrea | Ricardo | Olivia |
 | Rabia | Itzel | Cat |
 
-
 ## Process
+
+You will be building out an Object Oriented Domain of your choice. 
 
 ### Brainstorm
 
